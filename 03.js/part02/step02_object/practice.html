@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+</head>
+<body>
+    <script>
+        // Q1. 다음 배열에서 400, 500를 삭제하는 code 입력
+        var nums = [100, 200, 300, 400, 500];
+        // nums.splice(3, 2);
+        // console.log(nums)
+
+        // for 1
+        // let newNums = [];
+        // for(let i = 0 ; i < nums.length; i++ ) {
+        //     if (nums[i] !== 400)
+        //     newNums.push(nums[i])
+        // }
+        // console.log(newNums);
+
+        // for 2
+        // for(let i = 0; i < nums.length; i++){
+        //     if(nums[i] === 400 || nums[i] === 500) {
+        //         nums.splice(i, 1);
+        //         i--;
+        //     }
+        // }
+        // console.log(nums);
+        
+        // filter --> 결과가 배열로 반환
+        // console.log(nums.filter(num => (num%3)===0));
+     
+        // let deleteNums = [400, 500];
+        // console.log(nums.filter(num => !deleteNums.includes(num)));
+
+        // const filteredArray = nums.filter(num => (num !== 400))
+        //                             .filter(num => (num !== 500));
+        // console.log(filteredArray)
+
+        // reduce ---> *** return !, 초기값 지정(숫자:0, 배열:[], 문자열:'', etc ...)
+        const resultArray = nums.reduce((accumulator, currentvalue) => {
+            // console.log(accumulator);
+            // console.log(currentvalue);
+            if (currentvalue !== 400)
+            if (currentvalue !== 500)
+
+            accumulator.push(currentvalue);
+
+            return accumulator;
+        }, []);
+        console.log(resultArray);
+     
+     
+        // Q2. <pass> 부분에 배열 내장함수를 이용하여 코드를 입력하고 다음과 같이 출력되게 하세요.
+        var arr = [200, 100, 300];
+        arr.splice(2, 0, 10000);
+        console.log(arr);
+
+        // Q3. concat 활용
+        var year = '2022';
+        var month = '08';
+        var day = '03';
+        var hour = '11';
+        var minute = '34';
+        var second = '27';
+
+        var result = new Date(year, month, day, hour, minute, second);
+
+        console.log(result);
+
+        // Q4
+        let solarSystem = ['수성', '금성', '지구', '화성', '목성', '토성', '천왕성', '해왕성'];
+        console.log(solarSystem[1-1]);
+       
+        // Q5. 3의 배수
+        let num = 3;
+        if(num%3==0) {
+            console.log("짝");
+        } else {
+            console.log(num);
+        }
+    
+        // Q6.
+        const input = '거꾸로';
+
+        const reverseInput = input.split('').reverse().join('');
+        console.log(reverseInput);
+        // Q7.
+
+
+        // let kr = [수성, 금성, 지구, 화성, 목성, 토성, 천왕성, 해왕성];
+        // let eng = [Mecury, Venus, Earth, Mars, Jupiter, Saturn, Uranun, Neptune];
+        // const planet = {
+        //     수성 : 'mecury',
+        //     금성 : 'Venus',
+        //     지구 : 'Earth',
+        //     화성 : 'Mars',
+        //     목성 : 'Jupiter',
+        //     토성 : 'Saturn',
+        //     천왕성 : 'Uranun',
+        //     해왕성 : 'Neptune'
+
+        // }
+        // // const planetName = promt("검색하고자 하는 행성을 입력해주세요.");
+        // // alert(planet[planetName]);
+        
+
+        // Q8.
+        const js = "Javascript";
+        for (let i = 0; i < js.length - 1; i++) {
+            console.log(js[i], js[i+1]);
+        }
+
+        // Q9.
+        const alphabet = "h";
+        const upperAlphabet = alphabet.toUpperCase();
+        if ( alphabet === upperAlphabet) {
+            console.log('yes');
+        } else {
+            console.log('no');
+
+        }
+
+        // Q10.
+        students = ['김경욱','강권모','강보라','김경률','김민욱','김재선','김현민','박상민','박수용','박주용','배병서','배진경', '손용민','이광석','이동훈','정주현','정혜지','주동석','최정현','홍민향','황동하'];
+        students.sort()
+        for(i = 0; i < students.length; i++){
+            num = i+1;
+            console.log('번호 : ' + num + ', 이름 : ' + students[i]);
+        }
+
+        // Q11.
+        const joke = "복잡한 세상 편하게 살자";
+        console.log(joke.split(''))
+        for(let word of joke.split(' ')){
+            console.log(word[0])
+        }
+
+    </script>
+</body>
+</html>

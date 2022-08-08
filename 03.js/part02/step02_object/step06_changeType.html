@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step06_changeType.html</title>
+</head>
+<body>
+    <script>
+        // 타입 변환
+        // 명시적 vs 암묵적
+
+        let x = 10;
+        // console.log(x); // 10 number
+
+        let y = x + ''; 
+        // console.log(y); // 10 string
+        
+        let z = x.toString(); // 명시적
+        // console.log(z); // 10 string
+
+        // 암묵적
+        // 1. 문자열 타입으로 변환
+        // 1) 숫자 -> 문자열
+        // console.log(typeof (-120 + ''));
+        // console.log(typeof (1 + ''));
+        // console.log(typeof (NaN + ''));
+
+        // 2) 객체 -> 문자열
+        // console.log(typeof ({} + '')); // [Object Object] string
+        // console.log(typeof ([] + '')); // string
+        // console.log(typeof (function(){}));
+        // console.log(((function(){}) + ''));
+
+        // 3) true/false
+        // console.log(typeof (true + ''));
+
+        // 2. 숫자 타입으로 변환
+        // 1) 문자열 -> 숫자
+        // console.log((+''));
+        // console.log((+'0'));
+        // console.log((+'1'));
+
+        // 2) null & undefined -> 숫자
+        // console.log((+null)); // 0
+        // console.log((+undefined)); // NaN
+
+        // 3) 객체 -> 숫자
+        // console.log(+{}); // NaN
+        // console.log(+{name:"it"}); // NaN
+        // console.log(+[]); // 0
+        // console.log(+[1, 2]); // NaN
+
+        // console.log(+false); // 0
+
+        // '', null, [], false -> 0
+        // undefined, {} [not empty] -> NaN
+
+        // 3. Boolean 변환
+        // 명시적으로 실습해버림 
+        // console.log(Boolean(0)); // false
+        // console.log(Boolean(1)); // true
+        // console.log(Boolean({name:"it"})); // true
+        // console.log(Boolean(null)); // false
+        // console.log(Boolean(undefined)); // false
+
+        // 암묵적으로 표현
+        // falsy : 거짓으로 평가되는 값 (결과로 false)
+        // *** false, null, undefined, 0, NaN, '' 외우자
+
+
+        if(0) console.log('0'); // 0:false
+        // if(1) console.log('1'); // 1:true
+        if(null) console.log('null'); // null:false
+        if(undefined) console.log('undefined'); // undefined:false
+        if(NaN) console.log('NaN'); // NaN:false
+
+        // 명시적 : String, Number, Boolean
+
+
+
+        // 단축 평가
+        'Book' && 'Movie'
+        // console.log('Book' && 'Movie'); // Movie ?
+        // console.log('Book' || 'Movie'); // Book ?
+        
+        // 단축 평가 결과
+        // true && value --> value
+        // true || value --> true
+        // false && value --> false
+        // false || value --> value
+
+        // 조건문을 대신해서 사용 가능
+        let isLogin = true;
+        let viewMessage = "";
+
+        // isLogin true
+        if(isLogin) {
+            viewMessage = "어서오세요";
+        }
+        
+        viewMessage = isLogin && "어서오세요";
+        console.log(viewMessage);
+        
+        // isLogin false
+        isLogin = false;
+        if(!isLogin) {
+            viewMessage = "로그인에 실패했습니다";
+        }
+        
+        viewMessage = islogin || "로그인에 실패했습니다";
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step01_intro.html</title>
+    <style>
+        div {
+            background: darkblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- JS로 HTML style 변경 -->
+    <div id="style">style</div>
+
+    <button onclick="document.getElementById('style').style.visibility='hidden'">숨김</button>
+    <button onclick="document.getElementById('style').style.visibility='visible'">보임</button>
+
+    <!-- 기본 문법 -->
+    
+    <script>        
+        let x = 10;
+        var y = 'js';
+    
+        console.log(x);
+        console.log(y);
+
+        // 주석
+        /* 여러줄 주석
+        */
+
+        // 식별자 : 영문자(대소문자), 숫자, _(언더스코어), $(달러) 사용 가능
+        // 숫자로는 시작할 수 없음
+        // let 1var = 1; // error
+        // let itStudy = 1; // 카멜케이스(default)
+        // let ItStudy = 1; //파스칼케이스
+    
+
+    </script>
+    
+
+</body>
+</html>

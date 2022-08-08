@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step01_condition.html</title>
+</head>
+<body>
+    <script>
+        // 조건문
+        // 조건을 만족할 때 실행 순서를 정하는 구문
+        // if, if~else, if~else if~else
+        // random 분류(Math.random())
+        console.log(Math.random());
+
+        // 0.5 이상인 경우인지 아닌지
+        let randomNumber = Math.random();
+        // if(randomNumber >= 0.5) {
+        //     console.log("출력된 값은" + randomNumber + "이므로 0.5 이상입니다.");
+        //     // 템플릿 리터럴 사용하기
+        //     console.log(`출력된 값은 ${randomNumber} 이므로 0.5 이상입니다.`);
+        // } else {
+        //     console.log("출력된 값은" + randomNumber + "이므로 0.5 미만입니다.");
+        // }
+        
+        
+        // // 0.33, 0.66, 그 이상으로 기준
+        
+        
+        // if(randomNumber < 0.33) {
+        //     console.log("출력된 값은" + randomNumber + "이므로 0.33 미만입니다.");
+        // } else if(randomNumber < 0.66) { 
+        //     console.log(`출력된 값은 ${randomNumber} 이므로 0.66 미만입니다.`);
+        // } else {
+        //     console.log("출력된 값은" + randomNumber + "이므로 0.66 초과입니다.");
+        // }
+
+        // switch / case
+        // 0 : 일요일
+        // 1 : 월요일
+        // ~
+        // 6 : 토요일
+
+        let number = Number ('4');
+        switch (number) {
+            case 0 :
+                console.log("일요일입니다.");
+                break;
+            case 1 :
+                console.log("월요일입니다.");
+                break;
+            case 2 :
+                console.log("화요일입니다.");
+                break;
+            case 3 :
+                console.log("수요일입니다.");
+                break;
+            case 4 :
+                console.log("목요일입니다.");
+                break;
+            default:
+                console.log("지정되지 않은 값이므로");
+                break;
+        }
+
+        let serialNumber = '961010-1171512';
+        console.log(serialNumber.charAt(7));
+        if(serialNumber.charAt(7) === '1' || serialNumber.charAt(7) === '4') {
+            console.log("남성입니다.");
+        } else {
+            console.log("여성입니다.");
+        }
+
+        // promt
+        let serialNumber2 = prompt('주민번호를 입력해주세요. (-제외한 숫자만 입력해주세요)');
+        console.log(parseInt(serialNumber2.charAt(6)));
+        console.log(typeof serialNumber2);
+        // let serialNumber3 = parseInt(serialNumber2.charAt())
+        // if(serialNumber === 1 || serialNumber === 3) {
+        //     console.log("남성입니다.");
+        // } else {
+        //     console.log("여성입니다.");
+        // }
+
+
+
+    </script>
+</body>
+</html>

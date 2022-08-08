@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step04_date.html</title>
+</head>
+<body>
+    <script>
+        // date : 날짜와 시간을 위한 기능을 제공
+        console.log(new Date());
+        console.log(new Date(2022, 8)); // day를 제외한 모든 값의 시작은 0
+        // new Date(년 월 일 시 분 초 m초);
+
+        // now : 현재 시간 반환
+        console.log(Date.now()); // 밀리초(기준 : 1970년 1월 1일 00:00:00(UTC))
+
+        // 기본 값 반환
+        let today = new Date();
+        // console.log(today);
+        // console.log(today.getFullYear());
+        // console.log(today.getMonth());
+        // console.log(today.getDay()); // day는 1부터 시작
+
+        // toDateString : 날짜만 반환
+        let today2 = new Date('2022/08/03/11:05');
+        console.log(today2);
+        console.log(today2.toDateString());
+        
+        // toTimeString : 시간만 반환
+        console.log(today2.toTimeString());
+
+        // parse('문자열') : 문자열을 date 객체로 표현
+        console.log(new Date(Date.parse('2022-01-01')));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

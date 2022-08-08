@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step01_callback.html</title>
+</head>
+<body>
+    <script>
+        // 콜백 함수
+        // : 다른 함수의 파라미터로 넘겨주는 함수
+        function testA(callback) {
+            callback();
+        };
+        
+        function testB() {
+            // console.log('콜백');
+        };
+
+        testA(testB);
+
+        // 동기 vs 비동기
+        // 1. 동기 : Synchronous : 요청 결과 응답 후, 다른 동작이 실행
+        // [1, 2, 3].forEach((num) => {
+        //     console.log(num);
+        // });
+
+        // 2. 비동기 :Ansynchronous : 요청 결과 응답과는 별개로 다음 동작이 실행되는 방식
+        // [1, 2, 3].forEach((num) => {
+        //     setTimeout(() => {
+        //         console.log(num)
+        //     }, 3000);
+        // });
+
+        // console.log(1); // 동기
+        // setTimeout(() => console.log(2), 0); // 비동기 : 데이터를 받아올 때, ...
+        // console.log(3); // 동기
+        
+        // 스레드와 비동기의 관계 : 작업이 순차적으로 진행되는가
+        // JavaScript는 단일스레드,
+        // 멀티스레드 처럼 동작 -> WebAPI에서 제공하는 queue 영역 때문에 멀티스레드 처럼 동작이 가능
+        
+        
+        // 콜백 1
+        // function func() {
+        //     console.log(1);
+        //     setTimeout(() => console.log(2), 0);
+        //     console.log(3); 
+        // }
+        // func();
+        // 132 -> 123 출력을 바꾸고 싶다면?
+        
+        // 콜백 2 -> 콜백 지옥(콜백 함수를 이용해서 비동기를 제어하려고 하니 가독성이 떨어짐)
+        function func() {
+            setTimeout(() => {
+                console.log(1);
+                setTimeout(() => {
+                    console.log(2);
+                    setTimeout(() =>{
+                        console.log(3);
+                    }, 0);
+                }, 0);
+            }, 0);
+        }
+        // func()
+        
+        // 콜백 지옥을 해결하고자 -> Promise
+        // 1. 상태 : pending, fulfilled(정상적인 기능 수행 완료), rejected
+        // 2. 생산자(Producer) - 소비자(Consumer)
+        // 생산자
+        const promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // console.log('promise');
+                resolve('data');
+                // reject();
+            }, 2000);
+        });
+
+        
+        console.log(promise); //프로미스 객체 (실제 정상 기능이 수행된 상태의 데이터가 담겨있는 객체)
+
+        function usePromise() {
+            return new Promise((resolve, reject) => {
+
+            })
+        }
+        usePromise();
+
+        // 소비자
+        // promise
+        //     .then(v => {console.log(v)})
+        //     .then(() => {console.log(1)})
+        //     .then(() => {console.log(2)})
+        //     .catch(err => {console.log(err)})
+        //     .finally(() => {console.log('무조건 실행되는 코드 블럭')})
+
+
+
+        // 에러 처리
+        // try ~ catch
+
+        // try {
+        //     setTimeout(() => {
+        //         // noSuchElement;
+        //     }, 1000);
+        // } catch(error) {
+        //     console.log(error);
+        //     error;
+        // } finally {
+        //     console.log('무조건 실행되는 코드 블럭');
+        // }
+
+        // ex
+        function chainMethod() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(3);
+                }, 1000);
+            });
+        }
+        chainMethod()
+            .then((num) => num * 2) // 6
+            .then((num) => num * 3); // 18
+
+
+
+
+
+
+        //  Async & Await
+
+        
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        // .then(() => {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             console.log(2);
+        //             resolve();
+        //         }, 0);
+        //     });
+        // })
+        // .then(() => {
+        //     console.log(3);
+        // })
+        // .then(() => {
+        //     console.log(4);
+        // })
+        
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

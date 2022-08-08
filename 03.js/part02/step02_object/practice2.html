@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice2.html</title>
+</head>
+<body>
+    <script>
+        // Q1.
+let nums = [100, 400, 500, 300, 200];
+// let deleteNums = [400, 500];
+// console.log(nums.filter(num => !deleteNums.includes(num)));
+
+// for 1-1
+//     let newNums = [];
+//     for(let i = 0; i < nums.length; i++) {
+//         if(nums[i] !== 400) {
+//             newNums.push(nums[i]);
+//         }
+//         if(nums !== 500) {
+//             newNums.push(nums[i]);
+//         }
+//     } 
+//    console.log(newNums);
+
+// for 1-2
+// for(let i = 0; i < nums.length; i++){
+//     if(nums[i] === 400 || nums[i] === 500) {
+//         nums.splice(i, 1);
+//         i--;
+//     }
+// }
+// console.log(nums);
+
+// filter --> 결과가 배열로 반환
+// console.log(nums.filter(num => (num%3) === 0));
+
+// const filteredArray = nums.filter(num => (num !== 400))
+//                             .filter(num => (num !== 500));
+
+// console.log(filteredArray);
+
+
+// reduce --> *** return!, 초기값 지정(숫자:0, 배열:[], 문자열:'', etc);
+const resultArray = nums.reduce((accumulator, currentvalue) => {
+    // console.log(accumulator);
+    // console.log(currentvalue);
+    if(currentvalue !== 400)
+    if(currentvalue !== 500)
+
+    accumulator.push(currentvalue);
+
+    return accumulator;
+}, []);
+resultArray.sort();
+console.log(resultArray);
+
+
+// Q7.
+// ver1
+// if / switch
+
+// ver2
+// let kr = [수성, 금성, 지구, 화성, 목성, 토성, 천왕성, 해왕성];
+// let eng = [Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune];
+
+// ver3
+const planet = {
+    수성: "Mercury",
+    금성: "Venus",
+    지구: "Earth",
+    화성: "Mars"
+}
+
+// const planetName = prompt("검색하고자 하는 행성의 이름");
+// alert(planet[planetName]);
+
+// Q8.
+const word = "Javascipt";
+// for(let i = 0; i < word.length-1; i++) {
+//     console.log(`${word[i]} ${word[i+1]}`);
+// }
+
+// Q9. 
+// function checkUppercase(alpha){
+//     if(alpha === alpha.toUpperCase()) {
+//         console.log("YES");
+//     }else {
+//         console.log("NO");
+//     }
+// }  
+// checkUppercase('A');
+
+// Q10.
+const students = ['강권모','김경률','김경욱','김민욱','김재선','강보라','김현민','박상민','박수용','박주용','배병서','배진경', '손용민','이광석','이동훈','정주현','정혜지','주동석','최정현','홍민향','황동하'];
+
+// sort
+// let nums = ["apple", "grape", "banana"];
+// console.log(nums);
+// nums.sort();
+// console.log(nums);
+
+// students.sort(); // 오름차순
+// students.reverse(); // 내림차순
+// console.log(students);
+for(let key in students) {
+    // console.log(typeof key); // string
+    // console.log(`번호: ${parseInt(key)+1}, 이름: ${students[key]}`);
+}
+
+// Q11.
+const longWord = "복잡한 세상 편하게 살자";
+// console.log(longWord.split(' '));
+
+let result = '';
+for(let word of longWord.split(' ')) {
+    // console.log(typeof word);
+    // console.log(word[0]);
+    // console.log(word.charAt(0));
+    // console.log(word.slice(0, 1));
+    result = result + word[0];
+}
+
+// console.log(result);
+    </script>
+</body>
+</html>

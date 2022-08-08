@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step03_operator.html</title>
+</head>
+<body>
+    <script>
+        // 산술연산
+        // 사칙연산 : +, -, *, /
+        // % : 나머지 값
+        console.log(10%3);
+        // ** : 제곱
+        console.log(2**10);
+
+
+        // 우선순위
+        // 변수로도 사칙연산 가능
+        // 문자열의 경우 덧셈은 문장을 만들어서 출력해주는 기능
+        // 증감연산자 (++, --)
+        let num = 10;
+        // console.log(num++); //10, num = 11
+        // console.log(++num); //12, num = 12
+        // console.log(num--); //12, num = 11
+        // console.log(--num); //10, num = 10
+
+        // 대입연산자
+        // =, +=, -=, *=, /=, ... 
+        let x = 10;
+        x += 10; // x = x + 10
+        // console.log(x);
+
+        x *= 10;
+        // console.log(x);
+
+        // 비교연산자
+        // >, >=, <, <=, !==, ===, ...
+        let a = 10;
+        let b = 20;
+        console.log(a == 10);
+        console.log(a != 10);
+        console.log(a > b);
+        // !
+
+        // ==, ===
+        let c = '10';
+        let d = 10.0;
+        // typeof(피연산자) : 피연산자가 어떠한 데이터 타입인지 출력 기능
+
+        console.log(typeof(a), a);
+        console.log(typeof(c), c);
+        console.log(a == c); // true
+        console.log(a === c); // false 값은 똑같지만 데이터 타입이 달라서 false
+        console.log(a == d); // true 
+        console.log(a === d);  // true
+
+        // c + d = ?
+        console.log(c + d);
+
+
+
+
+        // 논리연산자
+        // ||, &&, !
+        // || 논리곱 OR : 둘중 하나라도 참이면 -> true
+        console.log(true || false);
+
+        // %% 논리합 AND : 둘 모두 결과가 참이면 -> true
+        console.log(true && true);
+
+        // ! 부정 NOT : 참과 거짓의 결과를 반대로 바꿈
+        console.log(!true);
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

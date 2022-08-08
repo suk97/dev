@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step03_arrow.html</title>
+</head>
+<body>
+    <script>
+        // 화살표 함수 : 변수에 익명함수를 사용하는 경우 표기법으로 => 표현, function 사용하지 않음
+        // let arrow = function() {
+        //     console.log('arrow');
+        // }
+        // arrow();
+
+        // 화살표 함수로 변경
+        let arrow = () => console.log('arrow');
+        arrow();
+
+        // 화살표 함수로 바꿔보기
+        
+        // let sum = function(x, y) {
+        //     return x + y;
+        // } 
+
+        let sum = (x, y) => x + y ;
+        console.log(sum(1, 2));
+        // return :
+        // 1. 함수 호출 시, 기능 결과를 갖고 있는것
+        // 2. 해당 코드블럭 자체가 종료
+        // 화살표 함수에서 return 구문이 있을 경우(단, return 구문 하나만 있을 때) 코드 블럭 및 return 생략 가능
+        // let sum = (x, y) => x + y ;
+
+        // 즉시 실행 함수 : 구현과 동시에 호출, 함수명으로 호출 되지 않음
+        (function immdiatelyFunction() {
+            console.log(1);
+        }());
+        // immdiatelyFunction();
+
+        // 웹페이지 화면 전환 혹은 렌더링 직후 바로 실행되어야 하는 기능(ex, 초기 데이터 세팅)에 사용
+        let name = "hi";
+        (function immdiatelyFunction2(name){
+            let x = 10;
+            console.log(name);
+        })(name);
+            
+        // 즉시 실행 함수 내부의 변수에는 외부로부터 접근이 불가능
+        // 불필요한 전역 변수를 생성하지 않고, 외부의 전역 변수와 충돌하지 않는 장점이 있음
+        let printAge = (function() {
+            let age = 24;
+            return age;
+        }());
+        console.log(printAge);
+        age = 30;
+        // 변수 앞에 키워드가 생략된 상태에서 초기화가 이루어지면 var 생략된 것과 똑같음
+        // var age = 30;
+        console.log(printAge);
+    </script>
+</body>
+</html>

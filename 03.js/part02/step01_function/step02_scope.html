@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step02_scope.html</title>
+</head>
+<body>
+    <script>
+        // 스코프 : 변수에 접근할 수 있는 범위
+        // - 종류 : 전역(global), 지역(local)
+        // - 지역스코프 종류 : 함수(var), 블록(let, const)
+        
+        // var : 함수에서 선언한 변수는 함수 내에서 접근 가능
+        function varFunction() {
+            var x = 10;
+            // console.log(x);
+        }
+        varFunction();
+
+        // console.log(x); // error
+
+        if (true) {
+            var y = 20;
+            let a = 40;
+            // console.log(y);
+        }
+        // console.log(y);
+        // console.log(a);
+
+        // let, const : 블록내에서 선언한 변수는 해당 블록에서만 접근 가능
+        function keywordFunction() {
+            let z = 30;
+        }
+        // console.log(z);
+
+        // ex
+        // function hello() {
+        //     for (let i = 0; i < 10; i++ ) {
+
+        //     }
+        //     console.log(i);
+        // }
+        // hello();
+
+        // ex2 : 중첩 범위에 따른 변수 접근을 생각 해봐야 한다
+        {
+            {
+                {
+
+                }
+            }
+        }
+        // 호이스팅 ( hoisting )
+        // 코드에 선언된 변수를 상단으로 끌어 올리는 행위
+        
+        // 1. 변수
+        // console.log(age); // var : undefined / let : error
+
+        // var age = 24;
+        
+        // console.log(age); // var : 초기화 된 값 :24 / let : 실행 자체가 안됨
+        
+        // 함수 내부에서 호이스팅 테스트
+        // function hoistingFunction() {
+        //     console.log(age); // var : undefined / let : error
+    
+        //     var age = 24;
+            
+        //     console.log(age); // var : 초기화 된 값 :24 / let : 실행 자체가 안됨
+        // }
+        // hoistiongFunction();
+
+        // 2. 함수
+        // printName();
+
+        // 함수 선언식 : 호이스팅이 가능
+        // function printName() {
+        //     let name = 'IT';
+        //     console.log(name);
+        // }
+        
+        // 함수 표현식 : 호이스팅이 불가능
+        // let printName = function() {
+        //     let name = 'IT';
+        //     console.log(name);
+        // }
+        // printName();
+
+
+        // scope chain -> 상위 함수로 가서 값을 가져온다.
+
+        // ex3 : scope chain 
+        var abc = "전역 변수 abc";
+        function outer() {
+            var xyz = "outer 지역 변수 xyz";
+            console.log(abc); // 1 : 전역 변수 abc
+            console.log(xyz); // 2 : outer 지역 변수 xyz
+            
+            function inner() {
+                var abc = "inner 지역 변수 abc";
+                
+                console.log(abc); // 3 : inner 지역 변수 abc
+                console.log(xyz); // 4 : outer 지역 변수 xyz
+                
+            }
+            
+            inner();
+            
+        }
+        
+        outer();
+        
+        
+        console.log(abc); // 5 : 전역 변수 abc
+        console.log(xyz); // 6 : error
+
+
+
+
+
+
+
+
+
+
+        </script>
+</body>
+</html>
